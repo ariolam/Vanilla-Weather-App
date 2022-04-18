@@ -12,10 +12,102 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/dc30d76cd6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-      <div class="container"></div>
-    <h1>Hello</h1>
+    <div class="container">
+      <div class="weather-app">
+        <form>
+          <div class="row">
+            <div class="col-8">
+              <input type="search" placeholder="Enter a city" />
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-outline-primary">
+                Search
+              </button>
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-outline-primary">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="weatherInfo">
+          <div class="row">
+            <div class="col-6">
+              <div>
+                <span class="temperature"> 13 </span>
+                <span class="units"> °C </span>
+                <i class="fa-light fa-sun"></i>
+              </div>
+            </div>
+            <div class="col-6">
+              <h1>Athens</h1>
+              <ul>
+                <li>Monday 12:25</li>
+                <li>Precipitation: 24% Humidity: 65% Wind: 11 km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="weatherForecast">
+          <div class="row">
+            <div class="col">
+              <div class="weatherForecastDay">
+                <div class="forecastDay">Tuesday</div>
+                <i class="fa-regular fa-cloud-drizzle"></i>
+                <div class="forecastTemperature">13 °C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weatherForecastDay">
+                <div class="forecastDay">Wednesday</div>
+                <i class="fa-regular fa-sun"></i>
+                <div class="forecastTemperature">15 °C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weatherForecastDay">
+                <div class="forecastDay">Thursday</div>
+                <i class="fa-regular fa-sun-cloud"></i>
+                <div class="forecastTemperature">18 °C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weatherForecastDay">
+                <div class="forecastDay">Friday</div>
+                <i class="fa-regular fa-sun-cloud"></i>
+                <div class="forecastTemperature">21 °C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weatherForecastDay">
+                <div class="forecastDay">Saturday</div>
+                <i class="fa-regular fa-sun-cloud"></i>
+                <div class="forecastTemperature">22 °C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <small>
+          This project was coded by Ariola Markou and is
+          <a
+            href="https://github.com/ariolam/Vanilla-Weather-App"
+            target="_blank"
+          >
+            open-sourced on GitHub
+          </a>
+          and
+          <a href="https://www.netlify.com/" target="_blank"
+            >hosted on Netlify</a
+          ></small
+        >
+      </div>
     </div>
     <script src="src/script.js"></script>
   </body>
