@@ -1,11 +1,86 @@
-.weather-app {
-  border: 2px solid #064cb6;
-  border-radius: 10px;
-  margin-top: 20px;
-  max-width: 50%;
-  padding: 30px;
-  background-color: #5584ac;
+body {
+  color: aliceblue;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    109.6deg,
+    rgb(204, 228, 247) 11.2%,
+    rgb(237, 246, 250) 100.2%
+  );
 }
-ul {
-  list-style: none;
+.weather-app {
+  border: 1px solid #70a9ff;
+  border-radius: 15px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  margin-top: 40px;
+  max-width: 50%;
+  padding: 40px;
+  background-color: #22577e;
+  line-height: 1.5;
+  text-align: left;
+  display: block;
+}
+input {
+  background: #f9f7fe;
+  border: none;
+  padding: 15px 20px;
+  display: inline-block;
+  border-radius: 6px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+  width: 100%;
+}
+.search,
+.current {
+  padding: 15px 20px;
+  border-radius: 6px;
+  height: 50px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.weatherInfo {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.temperatureContainer {
+  font-size: 60px;
+}
+.units {
+  font-size: 26px;
+  position: relative;
+  line-height: 1;
+  top: -20px;
+  right: 20px;
+}
+h1 {
+  font-size: 50px;
+}
+strong {
+  color: #faffaf;
+}
+.weatherForecast {
+  margin-bottom: 40px;
+}
+.weatherForecastDay {
+  border: 1px solid #70a9ff;
+  border-radius: 15px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  background-color: #70a9ff;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+}
+.sunMain {
+  color: #faffaf;
+}
+.sun {
+  color: #faffaf;
+  font-size: 32px;
+}
+.cloud {
+  color: aliceblue;
+  font-size: 32px;
 }
