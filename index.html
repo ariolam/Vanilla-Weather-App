@@ -16,13 +16,19 @@
       src="https://kit.fontawesome.com/dc30d76cd6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container weather-app">
       <div class="row">
         <div class="col-7">
-          <form>
-            <input type="search" placeholder="Enter a city" />
+          <form id="search-engine">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              autocomplete="off"
+              id="city-input"
+            />
           </form>
         </div>
         <div class="col-5">
@@ -38,17 +44,18 @@
         <div class="row">
           <div class="col-6">
             <div class="temperatureContainer">
-              <span class="temperature"> 13 </span>
+              <span class="temperature" id="temp"> </span>
               <span class="units"> °C </span>
-              <i class="fa-solid fa-sun sunMain"></i>
+              <i class="fa-solid fa-sun sunMain" id="icon"></i>
             </div>
           </div>
           <div class="col-6">
-            <h1>Athens</h1>
-            <h5>Monday 12:25</h5>
+            <h1 id="city"></h1>
+            <h5 id="currentDate"></h5>
             <h6>
-              Precipitation:<strong> 24% </strong> Humidity:
-              <strong> 65% </strong> Wind: <strong>11 km/h</strong>
+              <strong id="description"></strong> Humidity:
+              <strong id="humidity"> </strong> % Wind:
+              <strong id="wind"></strong> km/h
             </h6>
           </div>
         </div>

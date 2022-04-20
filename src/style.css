@@ -59,6 +59,9 @@ h1 {
 strong {
   color: #faffaf;
 }
+#description {
+  text-transform: capitalize;
+}
 .weatherForecast {
   margin-bottom: 40px;
 }
