@@ -22,7 +22,7 @@ let day = days[now.getDay()];
 let time = document.querySelector("#currentDate");
 time.innerHTML = `${day} ${hours}:${minutes}`;
 
-function dispayTemperature(response) {
+function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -39,17 +39,49 @@ function dispayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  let iconClass = translateIconName(response.data.weather[0].icon);
+  if (iconElement.classList.length < 3) {
+    iconElement.classList.add(iconClass);
+  } else {
+    iconElement.classList.remove(iconElement.classList[2]);
+    iconElement.classList.add(iconClass);
+  }
+}
+
+function translateIconName(iconId) {
+  if (iconId === "01d" || iconId === "01n") {
+    return "fa-sun";
+  }
+  if (iconId === "02d" || iconId === "02n") {
+    return "fa-cloud-sun";
+  }
+  if (iconId === "03d" || iconId === "03n") {
+    return "fa-cloud";
+  }
+  if (iconId === "04d" || iconId === "04n") {
+    return "fa-cloud";
+  }
+  if (iconId === "09d" || iconId === "09n") {
+    return "fa-cloud-rain";
+  }
+  if (iconId === "10d" || iconId === "10n") {
+    return "fa-cloud-sun-rain";
+  }
+  if (iconId === "11d" || iconId === "11n") {
+    return "fa-cloud-bolt";
+  }
+  if (iconId === "13d" || iconId === "13n") {
+    return "fa-snowflake";
+  }
+  if (iconId === "50d" || iconId === "50n") {
+    return "fa-smog";
+  }
 }
 
 function searchCity(city) {
   let apiKey = "e12a6661f841359a9c3ef6d9a972206e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(dispayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function submitLocation(event) {
