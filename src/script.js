@@ -46,6 +46,8 @@ function displayTemperature(response) {
     iconElement.classList.remove(iconElement.classList[2]);
     iconElement.classList.add(iconClass);
   }
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function translateIconName(iconId) {
@@ -108,3 +110,28 @@ function getCurrentPosition() {
 
 let button = document.querySelector(".current");
 button.addEventListener("click", getCurrentPosition);
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);

@@ -47,11 +47,19 @@ input {
   font-size: 60px;
 }
 .units {
-  font-size: 26px;
+  font-size: 18px;
   position: relative;
   line-height: 1;
-  top: -20px;
+  top: -27px;
   right: 20px;
+  color: aliceblue;
+}
+.active {
+  color: aliceblue;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
 h1 {
   font-size: 50px;
