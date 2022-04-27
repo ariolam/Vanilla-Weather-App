@@ -102,14 +102,17 @@ function showLocation(position) {
   let apiKey = "e12a6661f841359a9c3ef6d9a972206e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-  axios.get(apiUrl).then(dispayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
-let button = document.querySelector(".current");
-button.addEventListener("click", getCurrentPosition);
+let buttonCurrent = document.querySelector(".current");
+buttonCurrent.addEventListener("click", getCurrentPosition);
+
+let buttonSearch = document.querySelector(".search");
+buttonSearch.addEventListener("click", submitLocation);
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
