@@ -48,6 +48,8 @@ function displayTemperature(response) {
   }
 
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 function translateIconName(iconId) {
@@ -138,3 +140,35 @@ function displayCelsiusTemp(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weatherForecastDay">
+              <div class="forecastDay">${day}</div>
+              <i class="fa-solid fa-cloud-sun cloud"></i>
+              <div class="forecastTemperature">13 °C</div>
+            </div>
+          </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + ` </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
+
+function getForecast(coordinates) {
+  let apiKey = "e12a6661f841359a9c3ef6d9a972206e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
