@@ -54,11 +54,9 @@ input {
   right: 20px;
   color: aliceblue;
 }
-.active {
+#celsius-link {
   color: aliceblue;
   cursor: default;
-}
-.active:hover {
   text-decoration: none;
 }
 h1 {
